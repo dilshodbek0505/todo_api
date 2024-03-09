@@ -1,7 +1,7 @@
 # todo_api
 Kunlik topshiriqlarni yaratish, saqlash va tahrirlash uchun API.
 <br>
-Loyhada ishlatilgan kutubxonalar
+### Loyhada ishlatilgan kutubxonalar
 <ul>
     <li>
         <b>Djnago</b><br><small>backend uchun ishlatilgan asosiy kutubxonamiz</small>
@@ -12,11 +12,11 @@ Loyhada ishlatilgan kutubxonalar
     </li>
     <li>
         <b>Pillow</b><br>
-        <b>Djangoda rasimlar bilan ishlash, ularni saqlash va o'qish uchun ishlatilgan kutubxona</b>
+        <small>Djangoda rasimlar bilan ishlash, ularni saqlash va o'qish uchun ishlatilgan kutubxona</small>
     </li>
     <li>
-        <b>Python-dotnev</b>
-        <b>.env filedagi ma'lumotlarni o'qish uchun ishlatilgan kutubxona</b>
+        <b>Python-dotnev</b> <br>
+        <small>.env filedagi ma'lumotlarni o'qish uchun ishlatilgan kutubxona</small>
     </li>
 </ul>
 
