@@ -2,19 +2,20 @@ from django.shortcuts import render
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from django.utils.decorators import method_decorator
-from django.views.decorators.csrf import csrf_exempt
+from rest_framework.permissions import IsAuthenticated
 
 from .models import Todo
 from .serializers import TodoSerializer
 
 
-@method_decorator(csrf_exempt, name='post')
 class TodoApi(APIView):
+    permission_classes = (IsAuthenticated,)
+
     def get_object(self, pk):
         return Todo.objects.get(id = pk)
      
     def post(self, request, *args, **kwargs):
+
         serializer = TodoSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
@@ -50,8 +51,11 @@ class TodoApi(APIView):
         })
     
 class ShowAllTodoApi(APIView):
+    permission_classes = (IsAuthenticated, )
+
     def get(self,request, *args, **kwargs):
-        todos = Todo.objects.all()
+        todos = Todo.objects.filter(auth = request.user)
+    
         serializer = TodoSerializer(instance=todos, many = True)
         return Response({
             "status": True,

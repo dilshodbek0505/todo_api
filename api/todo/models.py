@@ -5,7 +5,7 @@ class Todo(models.Model):
     auth = models.ForeignKey(User, on_delete = models.CASCADE)
     name = models.CharField(max_length = 255)
     description = models.TextField()
-    is_done = models.BooleanField(default = True)
+    is_done = models.BooleanField(default = False)
     created = models.DateTimeField(auto_now_add = True)
     updated = models.DateTimeField(auto_now = True)
 
