@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.authtoken.models import Token
+
 
 from .serializers import RegisterSerializer, LoginSerializer, UserSerializer
 
@@ -23,10 +25,12 @@ class UserLoginApi(APIView):
         serializer = LoginSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.user
+        token, _ = Token.objects.get_or_create(user = user)
         login(request=request, user = user)
         return Response({
             "status": True,
-            "data": "Foydalanuvchi tizimga kiritildi !"
+            "data": serializer.data,
+            "token": token.key
         })
 
 class UserApi(APIView):

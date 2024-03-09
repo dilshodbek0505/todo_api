@@ -13,7 +13,6 @@ class RegisterSerializer(serializers.ModelSerializer):
         fields = ['id', 'username', 'confirm_password', 'password']
 
     def validate(self, attrs):
-        print(attrs)
         if attrs.get('password') != attrs.get('confirm_password'):
             raise serializers.ValidationError("Paro to'g'ri kelmadi!")
         attrs['password'] = make_password(attrs['password'])
