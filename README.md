@@ -21,8 +21,7 @@ Loyhada ishlatilgan kutubxonalar
 </ul>
 
 <hr>
-### Kutubxonalarni o'rnatish
-
+### Usage
     pip install -r requirements.txt
 
 ### Usage
