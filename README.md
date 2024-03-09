@@ -21,17 +21,10 @@ Loyhada ishlatilgan kutubxonalar
 </ul>
 
 <hr>
-<h1>Loyhani ko'chirib olish</h1>
-<br>
-Terminalda ushbu buyruqni kitirasiz <br>
-```
-git clone https://github.com/dilshodbek0505/todo_api.git
-``` <br>
-Loyha katoligiga o'tib dastlargi buyruqlarni berasiz
-```
-python manage.py makemigrations
-``` va ```python manage.py migrate```
-Loyhani ishga tushiramiz
-```python manage.py runserver```
+### Kutubxonalarni o'rnatish
 
-Endi loyhani bemalol postmanda yoki birorta boshqa lokal loyhamizning ichida ishlatishimiz mumkin bo'ladi
+    pip install -r requirements.txt
+
+### Usage
+
+    python manage.py runserver
